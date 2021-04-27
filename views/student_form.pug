@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', placeholder='Student name (Ahmed-Mohamed)' name='name' required='true' value=(undefined===student ? '' : student.name) )
+      label(for='code') Code:
+      input#code.form-control(type='text', placeholder='Code (1234567)' name='code' required='true' value=(undefined===student ? '' : student.code) ) 
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+        li= errors
+    
